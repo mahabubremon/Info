@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mahabub Islam Remon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #000000, #1a1a1a, #222831);
+      color: white;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Background Blur Circles */
+    body::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, #ff512f, #dd2476);
+      border-radius: 50%;
+      top: -100px;
+      left: -150px;
+      filter: blur(180px);
+      opacity: 0.7;
+    }
+    body::after {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, #24c6dc, #514a9d);
+      border-radius: 50%;
+      bottom: -100px;
+      right: -150px;
+      filter: blur(180px);
+      opacity: 0.7;
+    }
+
+    /* Profile Card with Glass + Neon Border */
+    .profile {
+      max-width: 420px;
+      padding: 25px;
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-radius: 25px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.4), 
+                  0 0 50px rgba(0, 255, 255, 0.3);
+      animation: neonBorder 3s infinite alternate;
+    }
+
+    /* Neon Border Animation */
+    @keyframes neonBorder {
+      0% { border-color: #FFD700; box-shadow: 0 0 20px #FFD700, 0 0 40px #FF0080; }
+      50% { border-color: #00FFFF; box-shadow: 0 0 20px #00FFFF, 0 0 40px #FF8C00; }
+      100% { border-color: #FF00FF; box-shadow: 0 0 20px #FF00FF, 0 0 40px #40E0D0; }
+    }
+
+    /* Profile Image with Neon Ring */
+    .image-container {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      position: relative;
+      margin: 0 auto 15px;
+    }
+
+    .image-container::before {
+      content: "";
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      background: conic-gradient(#ff0080, #ff8c00, #40e0d0, #ff0080);
+      animation: spin 4s linear infinite;
+      z-index: 0;
+    }
+
+    .image-container::after {
+      content: "";
+      position: absolute;
+      inset: 3px;
+      border-radius: 50%;
+      background: #111;
+      z-index: 1;
+    }
+
+    .image-container img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      z-index: 2;
+      border: 3px solid #000;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: #FFD700;
+      text-shadow: 0 0 10px rgba(255,215,0,0.7);
+    }
+    p {
+      font-size: 15px;
+      margin-bottom: 25px;
+      color: #f9c74f;
+    }
+
+    /* Link Button Styling (Glass Effect) */
+    .link-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 25px;
+      color: white;
+      font-size: 15px;
+      transition: 0.6s;
+      box-shadow: 0 0 15px rgba(255,255,255,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Rainbow Gradient Hover */
+    .link-btn:hover {
+      background: linear-gradient(270deg, #ff0080, #ff8c00, #40e0d0, #ff0080);
+      background-size: 600% 600%;
+      animation: rainbow 3s ease infinite;
+      color: #fff;
+      transform: scale(1.08);
+      box-shadow: 0 0 25px rgba(255,255,255,0.5);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .link-btn i {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile">
+    <!-- Profile Image with Neon Ring -->
+    <div class="image-container">
+      <img src="remon.jpg" alt="Profile Image">
+    </div>
+
+    <h1>Mahabub Islam Remon</h1>
+    <p>⚡ WELCOME⚡</p>
+
+    <a href="https://www.facebook.com/profile.php?id=61557298815658" class="link-btn"><i class="fab fa-facebook"></i> ☠️ || My Facebook Account || ☠️</a>
+    <a href="https://www.facebook.com/mahabub.islam.remon.1200" class="link-btn"><i class="fas fa-user"></i> 🏹 || Backup Account || 🏹</a>
+    <a href="https://www.instagram.com/soul__e3n/" class="link-btn"><i class="fab fa-instagram"></i> ⚡ || Instagram Account || ⚡</a>
+    <a href="https://www.facebook.com/profile.php?id=61559017825549" class="link-btn"><i class="fab fa-facebook"></i> 👀 || Facebook Page || 👀</a>
+    <a href="https://t.me/bdearning1200" class="link-btn"><i class="fab fa-telegram"></i> 🔥 || Telegram Channel || 🔥</a>
+    <a href="https://wa.me/+8801318608844" class="link-btn"><i class="fab fa-whatsapp"></i> 🔥 || Personal WhatsApp Account || 🔥</a>
+    <a href="https://t.me/Remon9978" class="link-btn"><i class="fas fa-user-shield"></i> 👑 || Personal Telegram Account || 👑</a>
+  </div>
+</body>
+</html>
